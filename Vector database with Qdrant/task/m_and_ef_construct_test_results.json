@@ -1,0 +1,26 @@
+[
+    {
+        "m": 8,
+        "ef_construct": 50,
+        "precision": 0.988,
+        "ann_time": 0.0352
+    },
+    {
+        "m": 8,
+        "ef_construct": 100,
+        "precision": 0.998,
+        "ann_time": 0.0359
+    },
+    {
+        "m": 16,
+        "ef_construct": 32,
+        "precision": 0.99,
+        "ann_time": 0.025
+    },
+    {
+        "m": 16,
+        "ef_construct": 50,
+        "precision": 0.996,
+        "ann_time": 0.0305
+    }
+]

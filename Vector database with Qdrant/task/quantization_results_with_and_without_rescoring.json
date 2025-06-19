@@ -1,0 +1,14 @@
+[
+    {
+        "rescore": true,
+        "oversampling": 2,
+        "precision": 0.999,
+        "ann_time": 0.0364
+    },
+    {
+        "rescore": false,
+        "oversampling": 2,
+        "precision": 0.848,
+        "ann_time": 0.0202
+    }
+]
