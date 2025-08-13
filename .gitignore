@@ -1,0 +1,58 @@
+# ------------------------------
+# Standard Python ignores
+# ------------------------------
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment & secrets
+.env
+.env.*
+
+# IDEs (PyCharm)
+.idea/
+*.swp
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
+
+# ------------------------------
+# Project-specific ignores
+# ------------------------------
+# Ignore everything in root and subfolders
+*
+
+# Allow only specific files
+!Vector database with Qdrant/
+!Vector database with Qdrant/task/
+!Vector database with Qdrant/task/stage1_semantic_search.py
+!Vector database with Qdrant/task/stage2_semantic_search.py
+!Vector database with Qdrant/task/stage3_semantic_search_with_openai_query_embedding.py
+!Vector database with Qdrant/task/stage4_plus_fastapi_result_retrieval.py
+!Vector database with Qdrant/task/stage4_semantic_search_with_openai_query_embedding_author_name_filter.py
+!Vector database with Qdrant/task/stage6_precision_calculation_hnsw_search_qdrant.py
+!Vector database with Qdrant/task/stage7_semantic_search_efhnsw.py
+!Vector database with Qdrant/task/stage8_optimised_version.py
+!Vector database with Qdrant/task/stage8_optimised_version_many_runs.py
+!Vector database with Qdrant/task/stage8_semantic_search_m_ef_construct.py
+!Vector database with Qdrant/task/stage9_semantic_search_quantization.py
+!Vector database with Qdrant/task/m_and_ef_construct_test_results.json
+!Vector database with Qdrant/task/m_and_ef_construct_test_results2.json
+!Vector database with Qdrant/task/m_and_ef_construct_test_results2.png
+!Vector database with Qdrant/task/quantization_results_rescore_split_plot.png
+!Vector database with Qdrant/task/quantization_results_with_and_without_rescoring.json
+
+!requirements_project.txt
+!README.md
+!LICENSE
+
+# Uncomment if needed in root
+#!requirements.txt
+!.gitignore

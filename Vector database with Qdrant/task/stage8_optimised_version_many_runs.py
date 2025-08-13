@@ -6,7 +6,7 @@ from typing import List, Dict
 from pprint import pprint
 from statistics import mean
 from qdrant_client import QdrantClient
-from qdrant_client.http.models import ScoredPoint, SearchParams, HnswConfigDiff
+from qdrant_client.http.models import ScoredPoint, SearchParams, HnswConfigDiff, QuantizationSearchParams
 from colorama import init, Fore
 
 init()
@@ -16,7 +16,7 @@ QDRANT_PORT = 6333
 COLLECTION_NAME = 'arxiv_papers'
 RUNS = 10
 QUERY_FILE = "test_queries_embeddings.json"
-OUTPUT_DIR = "qdrant_runs"
+OUTPUT_DIR = "qdrant_runs_results_hnsw_config"
 
 client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT, timeout=600)
 
@@ -59,7 +59,8 @@ def get_search_results_precision_and_times(query_dict: Dict[str, List[float]], t
         ann_result: List[ScoredPoint] = client.query_points(
             collection_name=COLLECTION_NAME,
             query=query_embedding,
-            limit=top_k
+            limit=top_k,
+            search_params=SearchParams(quantization=QuantizationSearchParams(ignore=True)),
         ).points
         ann_times.append(time.time() - start_time_ann)
 
@@ -67,7 +68,7 @@ def get_search_results_precision_and_times(query_dict: Dict[str, List[float]], t
             collection_name=COLLECTION_NAME,
             query=query_embedding,
             limit=top_k,
-            search_params=SearchParams(exact=True),
+            search_params=SearchParams(exact=True, quantization=QuantizationSearchParams(ignore=True)),
         ).points
 
         ann_ids = {pt.id for pt in ann_result}
